@@ -398,7 +398,8 @@ function MRP_get_related_posts( $post_id, $return_object = false, $hide_unpublis
 	# Generate order SQL based on plugin settings
 	$order = " ORDER BY ";
 	if($options['order_type'] == "manual") {
-	    $order .= " `position_unified` ASC, `post_date` ASC "; //sort by date related items inside all posts with unspecified ordering
+	    // $order .= " `position_unified` ASC, `post_date` ASC "; //sort by date related items inside all posts with unspecified ordering
+	    $order .= " `position2` ASC";
 	}
 	else {
     	switch( $options['order'] ) {
